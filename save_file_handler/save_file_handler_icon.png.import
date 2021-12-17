@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/party_cycle_icon.png-f94796e193a7f888ebaa2360e8cfe6a5.stex"
+path="res://.import/save_file_handler_icon.png-0ac67919b85d15c71e3c53a8862c567d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/rpg_framework/party_cycle/party_cycle_icon.png"
-dest_files=[ "res://.import/party_cycle_icon.png-f94796e193a7f888ebaa2360e8cfe6a5.stex" ]
+source_file="res://addons/rpg_framework/save_file_handler/save_file_handler_icon.png"
+dest_files=[ "res://.import/save_file_handler_icon.png-0ac67919b85d15c71e3c53a8862c567d.stex" ]
 
 [params]
 

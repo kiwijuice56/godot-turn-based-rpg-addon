@@ -7,3 +7,9 @@ extends Node
 # In your extension class, override this method and implement logic for your players and enemies
 func decide(context: Dictionary) -> Dictionary:
 	return {"Action": null, "Target": []}
+
+func get_action_ids() -> Array:
+	var id_list := []
+	for action in get_children():
+		id_list.append(action.id)
+	return id_list

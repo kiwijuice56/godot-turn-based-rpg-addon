@@ -1,17 +1,21 @@
 tool
 extends Node
-# Basic framework for a fighter in an RPG
+# Basic framework for a Fighter in an RPG
 
-# Array of strings that represent special abilities or traits of this fighter
-export var attributes: Array
+export var id := 0
+
+# Array of strings that represent special abilities or traits of this Fighter
+export(Array, String) var attributes: Array
+
+signal act_completed(result)
 
 # Called by Party parent node to continue turn-based battle sequence
 # Input context consists of other parties in a battle and other conditional information
-# Returns report of this fighter's turn
+# Emits a signal with a report of this fighter's turn
 # In your extension class, override this method and implement any unique game logic
-func act(context: Dictionary) -> Dictionary:
+func act(context: Dictionary) -> void:
 	var decision : Dictionary = get_action_decider().decide(context)
-	return {"Success": true}
+	emit_signal("act_completed", {"Success": true})
 
 func get_action_decider() -> Node:
 	var action_decider_script : Script = load(RpgFramework.addon_path + "action_decider/action_decider.gd")
@@ -20,6 +24,12 @@ func get_action_decider() -> Node:
 			return child
 	push_error("Missing ActionDecider as child of Fighter")
 	return null
+
+func save_data() -> Dictionary:
+	var save_info := {}
+	save_info["Actions"] = get_action_decider().get_action_ids()
+	save_info["Attributes"] = attributes
+	return save_info
 
 # Overrides built-in configuration warning to display warning when missing an ActionDecider
 func _get_configuration_warning() -> String:

@@ -5,6 +5,10 @@ class_name RpgFramework
 const addon_path: String = "res://addons/rpg_framework/"
 
 func _enter_tree():
+	add_custom_type("SaveFileHandler", "Node",
+	load(addon_path+"save_file_handler/save_file_handler.gd"),
+	load(addon_path+"save_file_handler/save_file_handler_icon.png"))
+	
 	add_custom_type("Fighter", "Node",
 	load(addon_path+"fighter/fighter.gd"), 
 	load(addon_path+"fighter/fighter_icon.png"))
@@ -13,9 +17,17 @@ func _enter_tree():
 	load(addon_path+"party/party.gd"),
 	load(addon_path+"party/party_icon.png"))
 	
-	add_custom_type("PartyCycle", "Node",
-	load(addon_path+"party_cycle/party_cycle.gd"),
-	load(addon_path+"party_cycle/party_cycle_icon.png"))
+	add_custom_type("FighterCycle", "Node",
+	load(addon_path+"fighter_cycle/fighter_cycle.gd"),
+	load(addon_path+"fighter_cycle/fighter_cycle_icon.png"))
+	
+	add_custom_type("TeamCycle", "Node",
+	load(addon_path+"fighter_cycle/team_cycle/team_cycle.gd"),
+	load(addon_path+"fighter_cycle/team_cycle/team_cycle_icon.png"))
+
+	add_custom_type("IndividualCycle", "Node",
+	load(addon_path+"fighter_cycle/individual_cycle/individual_cycle.gd"),
+	load(addon_path+"fighter_cycle/individual_cycle/individual_cycle_icon.png"))
 	
 	add_custom_type("Action", "Node",
 	load(addon_path+"action/action.gd"),
@@ -28,6 +40,9 @@ func _enter_tree():
 func _exit_tree():
 	remove_custom_type("Fighter")
 	remove_custom_type("Party")
-	remove_custom_type("PartyCycle")
+	remove_custom_type("FighterCycle")
+	remove_custom_type("TeamCycle")
+	remove_custom_type("IndividualCycle")
 	remove_custom_type("Action")
 	remove_custom_type("ActionDecider")
+	remove_custom_type("SaveFileHandler")
