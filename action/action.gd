@@ -3,7 +3,7 @@ extends Node
 
 signal action_completed
 
-export var id := 0
+export var save_id := ""
 
 # Called by Fighter to affect the targets and/or the user
 # Emits a signal with a dictionary consisting of the report of the action

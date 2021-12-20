@@ -16,7 +16,7 @@ func update_cycle() -> Array:
 
 func start_next_fighter() -> void:
 	if len(cycle) > 0:
-		cycle[0].call_deferred("act", {"Parties": cycle})
+		cycle[0].call_deferred("act", {"Fighters": cycle})
 		var report : Dictionary = yield(cycle[0], "act_completed")
 		
 		var temp = cycle[0]

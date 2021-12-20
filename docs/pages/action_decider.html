@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><link rel="stylesheet" href="../style.css"/>
+<body>
+<h1>ActionDecider</h1>
+<p>extends Node</p>
+<p>ActionDeciders are nodes that use the context of a battle to choose an Action for a Fighter. In a node tree, they should usually be the children of Fighters and should contain only Actions as children. The base class does not make any actual decisions, as it is intended to be extended. Extension classes should each be one type of decision-maker, such as a player ActionDecider that reads player input or an enemy ActionDecider that chooses Actions at random.</p>
+<h2>Variables</h2>
+<h3>action_scene_path</h3>
+<p>The FileSystem path to a folder containing all Action scenes</p>
+<h2>Signals</h2>
+<p>-</p>
+<h2>Functions</h2>
+<h3>decide(context: Dictionary) -&gt; Dictionary</h3>
+<p>Chooses an Action child for the parent Fighter to undergo. Returns a diciontary containing the Action reference and array of Fighter targets. In your extension class, override this method and return any other information necessary for the partent Fighter to undergo their turn.</p>
+<hr/>
+<p><a href="../index.html">homepage</a> | <a href="https://github.com/kiwijuice56/godot-turn-based-rpg-addon">github</a></p>
+</body></html>

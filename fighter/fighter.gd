@@ -2,7 +2,7 @@ tool
 extends Node
 # Basic framework for a Fighter in an RPG
 
-export var id := 0
+export var save_id := ""
 
 # Array of strings that represent special abilities or traits of this Fighter
 export(Array, String) var attributes: Array
@@ -25,16 +25,22 @@ func get_action_decider() -> Node:
 	push_error("Missing ActionDecider as child of Fighter")
 	return null
 
+# Returns data to be put in save game by a parent Party node
+# In your extension class, override this method and return any data necessary to preserve the state of the Fighter
 func save_data() -> Dictionary:
-	var save_info := {}
-	save_info["Actions"] = get_action_decider().get_action_ids()
-	save_info["Attributes"] = attributes
-	return save_info
+	var data := {}
+	data["Actions"] = get_action_decider().get_action_array()
+	data["Attributes"] = attributes
+	return data
+
+func load_data(data: Dictionary) -> void:
+	get_action_decider().load_data(data["Actions"])
+	attributes = data["Attributes"]
 
 # Overrides built-in configuration warning to display warning when missing an ActionDecider
 func _get_configuration_warning() -> String:
 	var action_decider_script : Script = load(RpgFramework.addon_path + "action_decider/action_decider.gd")
-	var action_decider_count : int = 0
+	var action_decider_count := 0
 	for child in get_children():
 		if child is action_decider_script:
 			action_decider_count += 1

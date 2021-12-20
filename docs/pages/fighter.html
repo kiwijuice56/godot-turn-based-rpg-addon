@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><link rel="stylesheet" href="../style.css"/>
+<body>
+<h1>Fighter</h1>
+<p>extends Node</p>
+<p>Represent the characters in combat, such as player party members or enemies. This class is intended to be extended to program game-specific functionality or variables such as animation and Fighter stats.</p>
+<h2>Variables</h2>
+<h3>save_id: String</h3>
+<h3>attributes: Array[String]</h3>
+<p>Contains any labels that denote a specific functionality of this Fighter, such as abilities</p>
+<h2>Signals</h2>
+<h3>act_completed(result: Dictionary)</h3>
+<p>Emitted by act function upon completion</p>
+<h2>Functions</h2>
+<h3>act(context: Dictionary) -&gt; void</h3>
+<p>The action taken by this Fighter each time it is their turn. The context parameter contains all of the fighters under the key "Fighters" either as a 1D or 2D array for individual and team cycles respectively. It emits a signal containing any information about the results of the turn that is necessary for the cycle nodes. By default, this method stores the decision of its ActionDecider but does nothing. In order to add functionality, extend this class and override this method. Note that this method should be agnostic of the type of Fighter and thus should only implement universal functionality such as animation or checking the status of the Fighter. Any decision making should be done by the Fighter's ActionDecider node.</p>
+<p>Example Implementation:</p>
+<pre>
+func act(context: Dictionary) -&gt; void:
+    var decision : Dictionary = get_action_decider().decide(context)
+
+    # Fake method for example only
+    animate(decision["Action"])
+
+    emit_signal("act_completed", {"Success": true, "Missed?": false})
+</pre>
+<h3>get_action_decider() -&gt; Node</h3>
+<p>Returns the main ActionDecider associated with this Fighter.</p>
+<h3>save_data() -&gt; Dictionary</h3>
+<p>Returns any data necessary to preserve the state of the Fighter node. In your extension class, you should return any data to be written to a save game.</p>
+<p>Example Implementation:</p>
+<pre>
+func save_data() -&gt; Dictionary:
+    var data := {}
+    data["Actions"] = get_action_decider().get_action_array()
+    data["Attributes"] = attributes
+
+    # Fake variables for example only
+    data["Attack"] = attack
+    data["Hp"] = hp
+
+    return data
+</pre>
+<h3>load_data(data: Dictionary) -&gt; void</h3>
+<p>Restores the state of the Fighter from the data in a save game. This method assumes that it is receiving the same format of data that would be returned in save_data.</p>
+<p>Example Implementation:</p>
+<pre>
+func load_data(data: Dictionary) -&gt; void:
+    # This code should work to restore the action and attributes of the Fighter, so ensure you include this snippet in your extension class
+
+    get_action_decider().load_data(data["Actions"])
+    attributes = data["Attributes"]
+</pre>
+<hr/>
+<p><a href="../index.html">homepage</a> | <a href="https://github.com/kiwijuice56/godot-turn-based-rpg-addon">github</a></p>
+</body></html>

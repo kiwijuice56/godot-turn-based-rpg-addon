@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><link rel="stylesheet" href="../style.css"/>
+<body>
+<h1>Action</h1>
+<p>extends Node</p>
+<p>Represent single things to be done by a Fighter in their turn, such as attacks or using items. They are intended to be extended and turned into modular scenes that do one singular thing in combat via their action function, which is called by parent Fighter nodes.</p>
+<h2>Variables</h2>
+<h3>save_id: String</h3>
+<h2>Signals</h2>
+<h3>action_completed</h3>
+<p>Emitted by action function upon completion</p>
+<h2>Functions</h2>
+<h3>action(user: Node, targets: Array) -&gt; void</h3>
+<p>Called by Fighter to affect the targets and/or the user. Emits a signal with a dictionary consisting of the report of the action, which is captured by the user Fighter. In your extension class, override this method and implement things such as damage calculation or graphical effects.</p>
+<p>Example Implementation:</p>
+<pre>
+func action(user: Node, targets: Array) -&gt; void:
+    # Fake variables for example only
+    for target in targets:
+        target.hp -= user.attack + power
+
+    emit_signal("action_completed", {"Missed": false, "Critical": true, "Hit Weakness": true})
+</pre>
+<hr/>
+<p><a href="../index.html">homepage</a> | <a href="https://github.com/kiwijuice56/godot-turn-based-rpg-addon">github</a></p>
+</body></html>

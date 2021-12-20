@@ -1,0 +1,44 @@
+body {
+	background: #151515 ;
+	color: white;
+	max-width: 800px ;
+	margin: auto ;
+	font-family: sans-serif ;
+}
+
+a {
+	color: #66a1ff;
+}
+
+a:hover {
+	color: #83bcfc;
+}
+
+h1 {
+	color: #def3ff;
+}
+
+h2 {
+	color: #b1dffa;
+}
+
+h3 {
+	font-size: 18px;
+	color: #87b3d4;
+}
+
+p {
+	color: #e3e3e3;
+}
+
+
+pre {
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+	line-height:1.2em;
+	background:linear-gradient(180deg,#242526 0, #242526 1.2em, #2a2c2e 0);
+	background-size:2.4em 2.4em;
+	background-origin:content-box;
+	padding:0 20px;
+	color: white;
+}

@@ -17,7 +17,7 @@ func save_file(id: int, developer_mode: bool) -> void:
 	for group in save_groups:
 		var group_data := {}
 		for node in get_tree().get_nodes_in_group(group):
-			node.save_data(group_data)
+			group_data[node.save_id] = node.save_data()
 		file.data[group] = group_data
 	var dir = Directory.new()
 	if developer_mode:
@@ -35,4 +35,4 @@ func load_file(id: int, developer_mode: bool) -> void:
 		file = load(save_folder_path + "%02d.tres" % (id)) 
 	for group in save_groups:
 		for node in get_tree().get_nodes_in_group(group):
-			node.load_data(file.data[group])
+			node.load_data(file.data[group][node.save_id])
