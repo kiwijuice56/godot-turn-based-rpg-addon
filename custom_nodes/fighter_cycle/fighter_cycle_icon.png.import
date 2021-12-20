@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fighter_icon.png-96e6747e8ee66acd51c24ce15cfaa8df.stex"
+path="res://.import/fighter_cycle_icon.png-942b10106e0bea35c449c3e02542a782.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/rpg_framework/fighter/fighter_icon.png"
-dest_files=[ "res://.import/fighter_icon.png-96e6747e8ee66acd51c24ce15cfaa8df.stex" ]
+source_file="res://addons/rpg_framework/custom_nodes/fighter_cycle/fighter_cycle_icon.png"
+dest_files=[ "res://.import/fighter_cycle_icon.png-942b10106e0bea35c449c3e02542a782.stex" ]
 
 [params]
 

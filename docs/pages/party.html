@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><link rel="stylesheet" href="../style.css"/>
+<body>
+<h1>Party</h1>
+<p>extends node</p>
+<p>Collection of associated Fighters as children.</p>
+<h2>Variables</h2>
+<h3>fighter_scene_path: String</h3>
+<p>The folder where other folders containing your Fighter scenes can be found</p>
+<p>Example Path:</p>
+<p><img src="../img/Party_path.png"/></p>
+<h3>save_id: String</h3>
+<h2>Signals</h2>
+<p>-</p>
+<h2>Functions</h2>
+<h3>save_data() -&gt; Array</h3>
+<p>Returns an array representing Fighter children to preserve their state. Each entry of the array is another array of size 2, where the first item is the save_id of the Fighter and the second item is a dictionary returned by the Fighter's save_data().</p>
+<h3>load_data(save_array: Array) -&gt; void</h3>
+<p>Restores children Fighters and their state. This method assumes that save_array is in the same format that is returned by save_data().</p>
+<hr/>
+<p><a href="../index.html">homepage</a> | <a href="https://github.com/kiwijuice56/godot-turn-based-rpg-addon">github</a></p>
+</body></html>

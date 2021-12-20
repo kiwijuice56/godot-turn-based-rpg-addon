@@ -2,7 +2,7 @@ tool
 extends EditorPlugin
 class_name RpgFramework
 
-const addon_path: String = "res://addons/rpg_framework/"
+const addon_path: String = "res://addons/rpg_framework/custom_nodes/"
 
 func _enter_tree():
 	add_custom_type("SaveFileHandler", "Node",

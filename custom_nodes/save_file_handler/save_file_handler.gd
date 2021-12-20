@@ -9,7 +9,7 @@ export(Array, String) var save_groups: Array
 export var save_folder_path: String = "user://"
 export var developer_save_folder_path: String = "res://"
 
-var save_file_template_path: String = "res://addons/rpg_framework/save_file/save_file_template.gd"
+var save_file_template_path: String = "res://addons/rpg_framework/custom_nodes/save_file/save_file_template.gd"
 
 # Developer files are saved as .tres files without encryption
 func save_file(id: int, developer_mode: bool) -> void:

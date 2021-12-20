@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><link rel="stylesheet" href="../style.css"/>
+<body>
+<h1>SaveFileHandler</h1>
+<p>extends Node</p>
+<p>Manages saving and loading player data using Godot's group system. Nodes in each group within save_groups have their save_data functions called to fill the group key of the save file dictionary.</p>
+<p>Example Usage:</p>
+<p><img width="800px" src="../img/SaveFileHandler_setup.png"/></p>
+<p><img src="../img/SaveFileHandler_execution.png"/></p>
+<h2>Variables</h2>
+<h3>save_groups: Array[String]</h3>
+<p>The Godot groups that this node searches to load and save data from.</p>
+<h3>save_folder_path: String</h3>
+<p>The folder where save games are stored, typically within the user:// folder.</p>
+<h3>developer_save_folder_path: String</h3>
+<p>A seperate folder to save debug save games to. The developer path can be used to save files within the project root folder to allow for quick editing and testing. Note that any files saved in res:// are impossible to be read in an exported game, so it is ideal to keep the save_folder_path within user://.</p>
+<h2>Signals</h2>
+<p>-</p>
+<h2>Functions</h2>
+<h3>save_file(id: int, developer_mode: bool) -&gt; void</h3>
+<p>Saves or overrides file at the id specified as a .tres file without encryption. If developer_mode is true, this node will save to the developer_save_folder_path instead of save_folder_path.</p>
+<h3>load_file(id: int, developer_mode: bool) -&gt; void</h3>
+<p>Loads file at the id specified. If developer_mode is true, this node will load from the developer_save_folder_path instead of save_folder_path.</p>
+<hr/>
+<p><a href="../index.html">homepage</a> | <a href="https://github.com/kiwijuice56/godot-turn-based-rpg-addon">github</a></p>
+</body></html>

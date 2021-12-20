@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/action_decider_icon.png-e5385117ae3b87a0a93f66d96ed05054.stex"
+path="res://.import/fighter_icon.png-0e84090afb3331cd9ddc0cdb14099a63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/rpg_framework/action_decider/action_decider_icon.png"
-dest_files=[ "res://.import/action_decider_icon.png-e5385117ae3b87a0a93f66d96ed05054.stex" ]
+source_file="res://addons/rpg_framework/custom_nodes/fighter/fighter_icon.png"
+dest_files=[ "res://.import/fighter_icon.png-0e84090afb3331cd9ddc0cdb14099a63.stex" ]
 
 [params]
 

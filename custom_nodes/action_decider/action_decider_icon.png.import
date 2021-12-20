@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/party_icon.png-f8a49298f9cc821a4e1a8fd1dfc1d9aa.stex"
+path="res://.import/action_decider_icon.png-2a8150255f8bda9547fbb2114a13e61f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/rpg_framework/party/party_icon.png"
-dest_files=[ "res://.import/party_icon.png-f8a49298f9cc821a4e1a8fd1dfc1d9aa.stex" ]
+source_file="res://addons/rpg_framework/custom_nodes/action_decider/action_decider_icon.png"
+dest_files=[ "res://.import/action_decider_icon.png-2a8150255f8bda9547fbb2114a13e61f.stex" ]
 
 [params]
 

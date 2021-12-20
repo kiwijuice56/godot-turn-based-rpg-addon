@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/save_file_handler_icon.png-0ac67919b85d15c71e3c53a8862c567d.stex"
+path="res://.import/action_icon.png-8214d9a7055a80cfe211bf0d85fc8e19.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/rpg_framework/save_file_handler/save_file_handler_icon.png"
-dest_files=[ "res://.import/save_file_handler_icon.png-0ac67919b85d15c71e3c53a8862c567d.stex" ]
+source_file="res://addons/rpg_framework/custom_nodes/action/action_icon.png"
+dest_files=[ "res://.import/action_icon.png-8214d9a7055a80cfe211bf0d85fc8e19.stex" ]
 
 [params]
 

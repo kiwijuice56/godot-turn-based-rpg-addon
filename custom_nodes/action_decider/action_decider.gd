@@ -24,5 +24,5 @@ func load_data(save_ids: Array) -> void:
 		remove_child(child)
 		child.queue_free()
 	for save_id in save_ids:
-		var new_action = load(action_scene_path + save_id + ".tscn").instance()
+		var new_action = load(action_scene_path + "%s/%s" % [save_id, save_id] + ".tscn").instance()
 		add_child(new_action)

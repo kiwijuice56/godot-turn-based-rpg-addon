@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html><link rel="stylesheet" href="../style.css"/>
+<body>
+<h1>Glossary</h1>
+<p>The nodes in this plugin were intended to maximize the development efficiency and flow of data in an RPG. In order to increase the consistency in the project, there are some conventions used throughout the project that will be explained here.</p>
+<h2>save_id: String</h2>
+<p>Many classes contain the variable save_id, which is the name used to represent nodes in save game files. Nodes such as Actions and Fighters that are instanced when loading the game must have their save_id match their FileSystem name without the ".tscn". While Godot's built-in node names could have served this purpose, this option allows duplicates of nodes under the same parent to be saved and loaded without issue.</p>
+<hr/>
+<p><a href="../index.html">homepage</a> | <a href="https://github.com/kiwijuice56/godot-turn-based-rpg-addon">github</a></p>
+</body></html>
